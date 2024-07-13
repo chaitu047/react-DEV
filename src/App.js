@@ -1,11 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import "./style.css";
+import InputComponent from "./components/InputComponent";
+import ListComponent from "./components/ListComponent";
 
 export default function App() {
+
+  const [list,setList] = useState([]);
+
+  console.log(list);
+
   return (
     <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
+      <InputComponent setList={setList}/>
+      <ListComponent list={list} setList={setList}/>
     </div>
   );
 }
